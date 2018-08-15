@@ -1,0 +1,90 @@
+doctype html
+html
+   head
+     block head
+        title pug template engine
+        link(rel="stylesheet", href="bootstrap/bootstrap.css")
+        link(rel="stylesheet", href="style/style.css")
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+body
+block content
+div.container.receipt-border.mt-4
+    div.mt-3
+     p.text-center 
+      span Receipt
+    div.container
+     div.row.mt-3.border-wrapper
+      mixin article(data,title)
+       .article(class=data)
+        .article-wrapper
+          p= title
+          if block
+            block
+          else
+      +article('col-md-8','Arivan Siddha & Varmam Click,')
+        p 3/10 Nammazhvar Street,jagadambiagi Nagar,
+        p Padi, Chennai - 600 050
+      +article('col-md-4','')
+       p Bill No :
+        span $171208-1
+       p Bill Date :
+        span 10/11/2017
+    div.container
+     div.row
+      mixin article(data,title)
+       .article(class=data)
+        .article-wrapper
+          p= title
+          if block
+            block
+          else
+      +article('col-md-6','')
+        p Patient Name :
+         span Pavithra
+        p Doctor :
+         span Dr.paravathy S pardeep ,BSMS
+      +article('col-md-6','')
+       p Age/sex :
+        span 20/F
+    div.container.border-wrapper
+      p Descrption
+      div.container
+       p Siddha Medicine cost for your order is Rs.317/-only.
+       p Payment method :
+        span Cash on Delivery
+    div.mt-2
+      mixin list
+       ul 
+        li Medicine once sold cannot be take back or exchange
+        li Medicine cost includes shipping and handling charges
+      +list 
+div
+ div.container.receipt-border.mt-5
+    div.mt-3.border-wrapper
+     p.text-center 
+      span Receipt
+    div.container
+     div.row
+      mixin article(data,title)
+       .article(class=data)
+        .article-wrapper
+          p= title
+          if block
+            block
+          else
+      +article('col-md-6','')
+        p contents 
+        p package contains Siddha Medicine
+      +article('col-md-6','')
+        p To,
+        p Udhyakumar 
+        p 
+    div.container.border-wrapper
+    div.mt-2
+      mixin list
+       ul 
+        li Medicine once sold cannot be take back or exchange
+        li Medicine cost includes shipping and handling charges
+      +list 
